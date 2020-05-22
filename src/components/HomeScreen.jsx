@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import DatePicker from './DatePicker';
 import Button from '@material-ui/core/Button';
@@ -10,11 +10,12 @@ import Box from '@material-ui/core/Box';
 import {times} from 'lodash';
 import moment from 'moment';
 import NoSsr from '@material-ui/core/NoSsr';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const boxWidth = '1em';
 const boxMargins = '0.1em';
 
-const styles = () => createStyles({
+const styles = (theme) => createStyles({
   boxFilled: {
     backgroundColor: '#111111',
     width: boxWidth,
@@ -29,32 +30,60 @@ const styles = () => createStyles({
     margin: boxMargins,
   },
   boxesArea: {
-    border: '1px dashed black',
     width: '86%',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center'
+  },
+  loading: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    backgroundColor: theme.palette.secondary.light,
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+
   }
 
 });
 
-const HomeScreen = ({classes}) => {
+const HomeScreen = ({classes, theme}) => {
   const WEEKS_IN_YEAR = 52.14285714285714432;
   const [birthday, setBirthday] = useState(new Date('1998-10-14'));
   const [untilTime, setUntilTime] = useState(new Date());
-  const [numberOfYears, setNumberOfYears] = useState(88);
+  const [numberOfYears, setNumberOfYears] = useState(79);
   const [numberOfWeeks, setNumberOfWeeks] = useState(Math.floor(numberOfYears * WEEKS_IN_YEAR));
   const [filledNumberOfWeeks, setFilledNumberOfWeeks] = useState(1);
   const [displayBoxes, setDisplayBoxes] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (loading === true) {
+      setDisplayBoxes(true);
+    } else {
+      return;
+    }
+  }, [loading]);
+
+  useEffect(() => {
+    if (displayBoxes === true)
+      setLoading(false);
+  }, [displayBoxes]);
 
 
   const fillBoxes = () => {
+    setDisplayBoxes(false);
     const birth = moment(birthday);
     const until = moment(untilTime);
     const weeks = until.diff(birth, 'week');
     setFilledNumberOfWeeks(weeks);
     setNumberOfWeeks(numberOfYears * WEEKS_IN_YEAR);
-    setDisplayBoxes(true);
+    setLoading(true);
   };
 
   return (
@@ -73,12 +102,12 @@ const HomeScreen = ({classes}) => {
       <Grid container item justify={'center'} alignItems={'center'} xs={12} sm={12} md={4}>
         <Grid container item justify={'center'} alignItems={'center'} xs={12}>
           <span style={{opacity: 0.7}}>
-            Number of years (Default is 88 years)
+            Number of years (Default is 79 years)
           </span>
         </Grid>
         <Grid container item justify={'center'} alignItems={'center'} xs={12}>
           <InputNumber
-            min={10}
+            min={1}
             max={150}
             value={numberOfYears}
             onChange={(number) => setNumberOfYears(number)}
@@ -115,8 +144,21 @@ const HomeScreen = ({classes}) => {
           </NoSsr>
           : null
       }
+      {
+        !loading ? null :
+          <div className={classes.loading}>
+            <div style={{paddingBottom: '2em'}}>
+              Please Wait, this going to take a couple of minutes
+            </div>
+            <ClipLoader
+              size={150}
+              color={theme.palette.primary.main}
+              loading={true}
+            />
+          </div>
+      }
     </Grid>
   );
 };
 
-export default withStyles(styles)(HomeScreen);
+export default withStyles(styles, {withTheme: true})(HomeScreen);
