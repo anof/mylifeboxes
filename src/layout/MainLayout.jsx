@@ -6,9 +6,9 @@ const styles = () => createStyles({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: '100vh',
     overflow: 'hidden',
+    paddingTop: '1em',
+    paddingBottom: '10em'
   }
 });
 

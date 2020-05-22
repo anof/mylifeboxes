@@ -13,21 +13,24 @@ import NoSsr from '@material-ui/core/NoSsr';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 const boxWidth = '1em';
+const boxHeight = '1em';
 const boxMargins = '0.1em';
 
 const styles = (theme) => createStyles({
   boxFilled: {
     backgroundColor: '#111111',
     width: boxWidth,
-    height: boxWidth,
+    height: boxHeight,
     margin: boxMargins,
+    display:'inline-block'
   },
   boxEmpty: {
     backgroundColor: '#FFFFFF',
     border: '1px solid black',
     width: boxWidth,
-    height: boxWidth,
+    height: boxHeight,
     margin: boxMargins,
+    display:'inline-block'
   },
   boxesArea: {
     width: '86%',
@@ -36,7 +39,7 @@ const styles = (theme) => createStyles({
     justifyContent: 'center'
   },
   loading: {
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     left: 0,
     backgroundColor: theme.palette.secondary.light,
@@ -46,10 +49,7 @@ const styles = (theme) => createStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-
-
-  }
-
+  },
 });
 
 const HomeScreen = ({classes, theme}) => {
@@ -88,21 +88,46 @@ const HomeScreen = ({classes, theme}) => {
 
   return (
     <Grid container spacing={5} height={'100%'}>
-      <Grid container item xs={12} justify={'center'}>
-        <h1>
-          Please input dates
-        </h1>
+
+      <Grid container item xs={12} spacing={3}>
+        <Grid container justify={'center'} item xs={12} spacing={1}>
+          <Box className={classes.boxFilled}/>
+          <Box className={classes.boxEmpty}/>
+        </Grid>
+        <Grid conainer item xs={12} style={{textAlign: 'center'}}>
+          <Typography variant={'body1'}>
+            <h1>Hello,</h1>
+            We are here to talk about your life ..<br/><br/>
+
+            I'm going to represent your time in this life with boxes,<br/>
+            and each box will represent one week ..<br/><br/>
+
+            Each box can be either black or white,<br/>
+            White box ( <Box className={classes.boxEmpty}/> ) means you didn't live this week yet!<br/>
+            Black box ( <Box className={classes.boxFilled}/> ) means you were alive that week (Hopefully having fun!)<br/><br/>
+
+            Now let's get into it, and get you your life boxes!
+          </Typography>
+        </Grid>
       </Grid>
-      <Grid container item justify={'center'} alignItems={'center'} xs={12} sm={12} md={4}>
+
+
+      <Grid container item xs={12} justify={'center'}>
+        <h2>
+          Please input dates
+        </h2>
+      </Grid>
+      <Grid container item justify={'center'} alignItems={'center'} xs={12}>
         <DatePicker label={'Birthday'} value={birthday} onChange={(date) => setBirthday(date)}/>
       </Grid>
-      <Grid container item justify={'center'} alignItems={'center'} xs={12} sm={12} md={4}>
+      <Grid container item justify={'center'} alignItems={'center'} xs={12}>
         <DatePicker label={'Until When (default is today)'} value={untilTime} onChange={(date) => setUntilTime(date)}/>
       </Grid>
-      <Grid container item justify={'center'} alignItems={'center'} xs={12} sm={12} md={4}>
+      <Grid container item justify={'center'} alignItems={'center'} xs={12}>
         <Grid container item justify={'center'} alignItems={'center'} xs={12}>
           <span style={{opacity: 0.7}}>
-            Number of years (Default is 79 years)
+            Number of years you think you'll live<br/>
+            (Human average is 79 years)
           </span>
         </Grid>
         <Grid container item justify={'center'} alignItems={'center'} xs={12}>
