@@ -174,7 +174,7 @@ const HomeScreen = ({classes, theme}) => {
         !loading ? null :
           <div className={classes.loading}>
             <div style={{paddingBottom: '2em'}}>
-              Please Wait, this going to take a couple of minutes
+              Please wait, this is going to take a couple of seconds
             </div>
             <ClipLoader
               size={150}
