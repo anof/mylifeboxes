@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/MainLayout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

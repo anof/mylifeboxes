@@ -50,6 +50,9 @@ const styles = (theme) => createStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  blockPadding:{
+    paddingTop:'2em'
+  }
 });
 
 const HomeScreen = ({classes, theme}) => {
@@ -87,9 +90,8 @@ const HomeScreen = ({classes, theme}) => {
   };
 
   return (
-    <Grid container spacing={5} height={'100%'}>
-
-      <Grid container item xs={12} spacing={3}>
+    <Grid container>
+      <Grid container>
         <Grid container justify={'center'} item xs={12} spacing={1}>
           <Box className={classes.boxFilled}/>
           <Box className={classes.boxEmpty}/>
@@ -118,13 +120,13 @@ const HomeScreen = ({classes, theme}) => {
           Please fill the following dates:
         </h2>
       </Grid>
-      <Grid container item justify={'center'} alignItems={'center'} xs={12}>
+      <Grid container item justify={'center'} alignItems={'center'} xs={12} className={classes.blockPadding}>
         <DatePicker label={'Birthday'} value={birthday} onChange={(date) => setBirthday(date)}/>
       </Grid>
-      <Grid container item justify={'center'} alignItems={'center'} xs={12}>
+      <Grid container item justify={'center'} alignItems={'center'} xs={12} className={classes.blockPadding}>
         <DatePicker label={'Until When (default is today)'} value={untilTime} onChange={(date) => setUntilTime(date)}/>
       </Grid>
-      <Grid container item justify={'center'} alignItems={'center'} xs={12}>
+      <Grid container item justify={'center'} alignItems={'center'} xs={12} className={classes.blockPadding}>
         <Grid container item justify={'center'} alignItems={'center'} xs={12}>
           <span style={{opacity: 0.7}}>
             Number of years you think you'll live<br/>
@@ -140,7 +142,7 @@ const HomeScreen = ({classes, theme}) => {
             enableMobileNumericKeyboard/>
         </Grid>
       </Grid>
-      <Grid container item xs={12} justify={'center'} alignItems={'center'}>
+      <Grid container item xs={12} justify={'center'} alignItems={'center'} className={classes.blockPadding}>
         <Button color={'primary'} variant={'contained'} size={'large'} onClick={fillBoxes}>
           <Typography variant={'button'}><b>Fill my boxes</b></Typography>
         </Button>

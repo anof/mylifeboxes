@@ -6,9 +6,7 @@ const styles = () => createStyles({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    overflow: 'hidden',
-    paddingTop: '1em',
-    paddingBottom: '10em'
+    padding: '2em 1em 10em 1em'
   }
 });
 
