@@ -9,6 +9,7 @@ import InputNumber from 'react-input-number';
 import Box from '@material-ui/core/Box';
 import {times} from 'lodash';
 import moment from 'moment';
+import NoSsr from '@material-ui/core/NoSsr';
 
 const boxWidth = '1em';
 const boxMargins = '0.1em';
@@ -91,25 +92,27 @@ const HomeScreen = ({classes}) => {
       </Grid>
       {
         displayBoxes ?
-          <Grid
-            container
-            justify={'center'}
-            alignItems={'center'}
-            item
-            xs={12}
-          >
-            <div className={classes.boxesArea}>
-              {
-                times(numberOfWeeks, (i) =>
-                  (
-                    i < filledNumberOfWeeks ?
-                      <Box className={classes.boxFilled} key={i}/> :
-                      <Box className={classes.boxEmpty} key={i}/>
+          <NoSsr>
+            <Grid
+              container
+              justify={'center'}
+              alignItems={'center'}
+              item
+              xs={12}
+            >
+              <div className={classes.boxesArea}>
+                {
+                  times(numberOfWeeks, (i) =>
+                    (
+                      i < filledNumberOfWeeks ?
+                        <Box className={classes.boxFilled} key={i}/> :
+                        <Box className={classes.boxEmpty} key={i}/>
+                    )
                   )
-                )
-              }
-            </div>
-          </Grid>
+                }
+              </div>
+            </Grid>
+          </NoSsr>
           : null
       }
     </Grid>
