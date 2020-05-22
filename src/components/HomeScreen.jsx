@@ -36,7 +36,8 @@ const styles = (theme) => createStyles({
     width: '86%',
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingTop: '2em'
   },
   loading: {
     position: 'fixed',
@@ -50,8 +51,8 @@ const styles = (theme) => createStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  blockPadding:{
-    paddingTop:'2em'
+  blockPadding: {
+    paddingTop: '2em'
   }
 });
 
@@ -116,7 +117,7 @@ const HomeScreen = ({classes, theme}) => {
 
 
       <Grid container item xs={12} justify={'center'}>
-        <h2 style={{textAlign:'center'}}>
+        <h2 style={{textAlign: 'center'}}>
           Please fill the following dates:
         </h2>
       </Grid>
@@ -158,15 +159,18 @@ const HomeScreen = ({classes, theme}) => {
               xs={12}
             >
               <div className={classes.boxesArea}>
-                {
-                  times(numberOfWeeks, (i) =>
-                    (
-                      i < filledNumberOfWeeks ?
-                        <Box className={classes.boxFilled} key={i}/> :
-                        <Box className={classes.boxEmpty} key={i}/>
+                <h1>Your boxes:</h1>
+                <div>
+                  {
+                    times(numberOfWeeks, (i) =>
+                      (
+                        i < filledNumberOfWeeks ?
+                          <Box className={classes.boxFilled} key={i}/> :
+                          <Box className={classes.boxEmpty} key={i}/>
+                      )
                     )
-                  )
-                }
+                  }
+                </div>
               </div>
             </Grid>
           </NoSsr>
@@ -176,7 +180,7 @@ const HomeScreen = ({classes, theme}) => {
         !loading ? null :
           <div className={classes.loading}>
             <div style={{paddingBottom: '2em'}}>
-              Please wait, this is going to take a couple of seconds
+              <b>Please wait, this is going to take a couple of seconds</b>
             </div>
             <ClipLoader
               size={150}
