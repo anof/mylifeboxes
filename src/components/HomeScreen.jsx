@@ -22,7 +22,7 @@ const styles = (theme) => createStyles({
     width: boxWidth,
     height: boxHeight,
     margin: boxMargins,
-    display:'inline-block'
+    display: 'inline-block'
   },
   boxEmpty: {
     backgroundColor: '#FFFFFF',
@@ -30,7 +30,7 @@ const styles = (theme) => createStyles({
     width: boxWidth,
     height: boxHeight,
     margin: boxMargins,
-    display:'inline-block'
+    display: 'inline-block'
   },
   boxesArea: {
     width: '86%',
@@ -104,7 +104,8 @@ const HomeScreen = ({classes, theme}) => {
 
             Each box can be either black or white,<br/>
             White box ( <Box className={classes.boxEmpty}/> ) means you didn't live this week yet!<br/>
-            Black box ( <Box className={classes.boxFilled}/> ) means you were alive that week (Hopefully having fun!)<br/><br/>
+            Black box ( <Box className={classes.boxFilled}/> ) means you were alive that week (Hopefully having
+            fun!)<br/><br/>
 
             Now let's get into it, and get you your life boxes!
           </Typography>
@@ -113,8 +114,8 @@ const HomeScreen = ({classes, theme}) => {
 
 
       <Grid container item xs={12} justify={'center'}>
-        <h2>
-          Please input dates
+        <h2 style={{textAlign:'center'}}>
+          Please fill the following dates:
         </h2>
       </Grid>
       <Grid container item justify={'center'} alignItems={'center'} xs={12}>

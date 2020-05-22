@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0824ab01-a79b-4e2f-b58a-596a7fd3419a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mylifeboxes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mylifeboxes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/MainLayout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,9 +104,13 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="96" width="1166" height="572" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1366.741@0.27.1366.741" timestamp="1590093151100" />
-    <state x="347" y="168" key="run.anything.popup" timestamp="1590160450983">
+    <state x="374" y="123" width="618" height="518" key="find.popup" timestamp="1590160978785">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="347" y="168" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1590160450983" />
+    <state x="374" y="123" width="618" height="518" key="find.popup/0.27.1366.741@0.27.1366.741" timestamp="1590160978785" />
+    <state x="347" y="168" key="run.anything.popup" timestamp="1590161148033">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="347" y="168" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1590161148033" />
   </component>
 </project>
